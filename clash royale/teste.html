@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Wiki Clash Royale</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f3f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2d3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 20px;
+    }
+
+    .card img {
+      width: 120px;
+      display: block;
+      margin: 0 auto 15px auto;
+    }
+
+    .card h2 {
+      text-align: center;
+      color: #6a4ee6;
+      margin: 10px 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 120px auto;
+      gap: 5px 10px;
+      margin-bottom: 15px;
+    }
+
+    .stats div {
+      padding: 4px 0;
+    }
+
+    .section-title {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      border-left: 5px solid #6a4ee6;
+      padding-left: 8px;
+      font-weight: bold;
+      color: #2d3e50;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      text-align: center;
+    }
+
+    table th {
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <header>Wiki Clash Royale — Cartas</header>
+  <div class="container">
+
+    <!-- Carta 1: Arqueiras -->
+    <div class="card">
+      <img src="https://static.wikia.nocookie.net/clashroyale/images/0/0e/ArchersCard.png" alt="Arqueiras">
+      <h2>Arqueiras</h2>
+      <div class="stats">
+        <div><b>Raridade:</b></div><div>Comum</div>
+        <div><b>Tipo:</b></div><div>Tropa</div>
+        <div><b>Custo:</b></div><div>3 Elixir</div>
+        <div><b>Alvo:</b></div><div>Aéreo e Terrestre</div>
+        <div><b>Alcance:</b></div><div>5</div>
+        <div><b>Arena:</b></div><div>Treinamento</div>
+      </div>
+
+      <div class="section-title">Descrição</div>
+      <p>Duas arqueiras que disparam flechas rápidas a longa distância.</p>
+
+      <div class="section-title">Estatísticas</div>
+      <table>
+        <tr><th>Nível</th><th>Vida</th><th>Dano</th><th>DPS</th></tr>
+        <tr><td>1</td><td>125</td><td>33</td><td>44</td></tr>
+        <tr><td>5</td><td>181</td><td>48</td><td>64</td></tr>
+        <tr><td>10</td><td>322</td><td>86</td><td>114</td></tr>
+        <tr><td>15</td><td>562</td><td>150</td><td>200</td></tr>
+      </table>
+
+      <div class="section-title">Counters</div>
+      <ul>
+        <li>Flechas</li>
+        <li>Bola de Fogo</li>
+        <li>Valquíria</li>
+      </ul>
+    </div>
+
+    <!-- Carta 2: Gigante -->
+    <div class="card">
+      <img src="https://static.wikia.nocookie.net/clashroyale/images/b/b1/GiantCard.png" alt="Gigante">
+      <h2>Gigante</h2>
+      <div class="stats">
+        <div><b>Raridade:</b></div><div>Raro</div>
+        <div><b>Tipo:</b></div><div>Tropa</div>
+        <div><b>Custo:</b></div><div>5 Elixir</div>
+        <div><b>Alvo:</b></div><div>Construções</div>
+        <div><b>Alcance:</b></div><div>Curto</div>
+        <div><b>Arena:</b></div><div>Treinamento</div>
+      </div>
+
+      <div class="section-title">Descrição</div>
+      <p>Um tanque com muita vida que foca apenas em construções.</p>
+
+      <div class="section-title">Estatísticas</div>
+      <table>
+        <tr><th>Nível</th><th>Vida</th><th>Dano</th><th>DPS</th></tr>
+        <tr><td>1</td><td>2000</td><td>120</td><td>80</td></tr>
+        <tr><td>5</td><td>2900</td><td>174</td><td>116</td></tr>
+        <tr><td>10</td><td>4000</td><td>240</td><td>160</td></tr>
+      </table>
+
+      <div class="section-title">Counters</div>
+      <ul>
+        <li>Mini P.E.K.K.A</li>
+        <li>Exército de Esqueletos</li>
+        <li>Canhão</li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>

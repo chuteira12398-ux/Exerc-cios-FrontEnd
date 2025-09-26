@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        body{
+            width: 1000px;
+            margin: auto;
+        }
+        header figure, header h1{
+            text-align: center;
+        }
+        header h1{
+            background-color: #000;
+            color: #fff;
+            border-bottom:  solid #c4d6a8 9px;
+            margin-top: -17px;
+
+        }
+
+        nav{
+            float: left;
+        }
+
+       nav ul{
+        margin: 0;
+        padding: 0;
+       }
+
+        nav ul li{
+            list-style: none;
+            border-top: solid thin;
+            width: 150px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        nav ul li:nth-last-child(5){
+            border-bottom: solid thin;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        main{
+            width: 620px;
+            float: left;
+            margin-left: 25px;
+            margin-right: 25px;
+            text-align: justify;
+        }
+
+        main img{
+            float: left;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+
+        main h2{
+            margin-top: 0;
+            text-align: right;
+            font-size: 0.75em;
+        }
+        aside{
+            width: 150px;
+            float: right;
+        }
+
+        footer{
+            background-color: #000;
+            clear: both;
+        }
+
+        footer p{
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: solid #c4d6a8 9px;
+        }
+
+        aside article h2{
+            border-bottom: solid thin #c4d6a8;
+            margin-bottom: 0;
+        }
+
+        .horario{
+            margin-top: 0;
+            text-align: right;
+            color: #c4d6a8;
+        }
+
+        .link{
+            color: #900;
+            text-align: right;
+            display: block;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <figure>
+        <img src="vista1.JPG" alt="vista 1">
+        <img src="vista4.JPG" alt="vista 2">
+        <img src="vista5.JPG" alt="vista 3">
+        <img src="vista2.JPG" alt="vista 4">
+        <img src="vista3.JPG" alt="vista 5">
+    </figure>
+<h1>Portal da Floresta</h1>
+</header>
+    
+<nav>
+                           
+    <ul>
+        <li><a href="link1.html" target="_self"></a>link 1</li>
+        <li><a href="link2.html" target="_self"></a>link 2</li>
+        <li><a href="link3.html" target="_self"></a>link 3</li>
+        <li><a href="link4.html" target="_self"></a>link 4</li>
+        <li><a href="link5.html" target="_self"></a>link 5</li>
+    </ul>
+</nav>
+    <main>
+        <h1>Título Principal</h1>
+        <h2>Autor e Data</h2>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, quasi possimus repellat quos voluptatem eius, 
+at odio nobis dolorum quis,ab tempora dignissimos. Quos perspiciatis sequi quidem laudantium! Cupiditate, tenetur.</p>
+ <p><img src="escada.jpg" alt="detalhe interno">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+Illo impedit expedita cumque vel laudantium voluptatum architecto et tempora atque fuga exercitationem provident ipsa a, deserunt harum quam quia fugiat vitae!</p>
+    </main>
+
+<aside>
+    <article>
+        <h2>Notícia 1</h2>
+        <p>00h00/ 01.01</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Perferendis aperiam assumenda, consequuntur cupiditate inventore ut dolorum saepe laborum. 
+        Laborum, optio blanditiis. Illo odit aperiam, quia vero beatae iste amet voluptatum. <a href="">leia mais</a></p>
+
+        <article>
+        <h2>Notícia 1</h2>
+        <p>00h00/ 01.01</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Perferendis aperiam assumenda, consequuntur cupiditate inventore ut dolorum saepe laborum. 
+        Laborum, optio blanditiis. Illo odit aperiam, quia vero beatae iste amet voluptatum. <a href="">outras</a></p>
+    </article>
+
+    <article>
+        <h2>Notícia 1</h2>
+        <p>00h00/ 01.01</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Perferendis aperiam assumenda, consequuntur cupiditate inventore ut dolorum saepe laborum. 
+        Laborum, optio blanditiis. Illo odit aperiam, quia vero beatae iste amet voluptatum. <a href="">siga o exemplo</a></p>
+    </article>
+  </article>
+</aside>
+
+<footer>
+    <p>Rua vitae rhoncus, 123, São Paulo, SP - 01234 - 000 - 11 1234.5678</p>
+</footer>
+
+
+
+</body>
+
+</html>
