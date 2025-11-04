@@ -5,102 +5,119 @@
     <meta charset="UTF-8">
     <title>Wiki Clash Royale</title>
     <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f3f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2d3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.6rem;
+    }
+
+    /* Botões de filtro */
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .filter-buttons button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #6a4ee6;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: bold;
+    }
+
+    .filter-buttons button:hover {
+      background: #5338c2;
+    }
+
+    .filter-buttons button.active {
+      background: #2d3e50;
+    }
+
+    /* Container das cartas */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 100px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .card h2 {
+      text-align: center;
+      color: #6a4ee6;
+      margin: 10px 0;
+    }
+
+    .raridade {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .raridade.comum { color: #999; }
+    .raridade.raro { color: #007bff; }
+    .raridade.epico { color: #a000a0; }
+
+    .hidden {
+      display: none;
+    }
+  </style>
     
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f3f0;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: #2d3e50;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            font-size: 1.5em;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            padding: 20px;
-        }
-
-        .card img {
-            width: 120px;
-            display: block;
-            margin: 0 auto 15px auto;
-        }
-
-        .card h2 {
-            text-align: center;
-            color: #6a4ee6;
-            margin: 10px 0;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: 120px auto;
-            gap: 5px 10px;
-            margin-bottom: 15px;
-        }
-
-        .stats div {
-            padding: 4px 0;
-        }
-
-        .section-title {
-            margin-top: 10px;
-            margin-bottom: 5px;
-            border-left: 5px solid #6a4ee6;
-            padding-left: 8px;
-            font-weight: bold;
-            color: #2d3e50;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 8px;
-        }
-
-        table th,
-        table td {
-            border: 1px solid #ddd;
-            padding: 6px;
-            text-align: center;
-        }
-
-        table th {
-            background: #eee;
-        }
-    
-    
-    </style>
+        
 </head>
 
 <body>
 
     <header>Wiki Clash Royale — Cartas</header>
 
+    <!-- Botões de filtro -->
+  <div class="filter-buttons">
+    <button class="active" data-filter="todas">Todas</button>
+    <button data-filter="comum">Comuns</button>
+    <button data-filter="raro">Raras</button>
+    <button data-filter="epico">Épicas</button>
+    <button data-filter="lendario">Lendárias</button>
+    <button data-filter="campeoes">Campeões</button>
+    <button data-filter="feiticos">Feitiços</button>
+    <button data-filter="espiritos">Espíritos</button>
+  </div>
+
 
 
     <div class="container">
         <!-- Carta 1: Arqueiras -->
-        <div class="card">
+        <div class="card comum">
             <img src="ArchersCard.webp"
                 alt="Arqueiras">
             <h2>Arqueiras</h2>
-            <div class="stats">
+            <div class="comum">
                 <div><b>Raridade:</b></div>
                 <div>Comum</div>
                 <div><b>Tropa:</b></div>
@@ -110,7 +127,7 @@
                 <div><b>Alvo:</b></div>
                 <div>Aéreo e Terrestre</div>
                 <div><b>Alcance:</b></div>
-                <div>5.5 ou 6.5 casas</div>
+                <div>5.5 ou 6.5 quadrados</div>
                 <div><b>Arena:</b></div>
                 <div>Campo de Treinamento</div>
             </div>
@@ -157,10 +174,10 @@
             </ul>
         </div>
         <!-- Carta 2: Gigante -->
-        <div class="card">
+        <div class="card raro">
             <img src="GiantCard.webp" alt="Gigante">
             <h2>Gigante</h2>
-            <div class="stats">
+            <div class="raro">
                 <div><b>Raridade:</b></div>
                 <div>Rara</div>
                 <div><b>Tropa:</b></div>
@@ -170,7 +187,7 @@
                 <div><b>Alvo:</b></div>
                 <div>Construções</div>
                 <div><b>Alcance:</b></div>
-                <div>1.6 casas</div>
+                <div>1.6 quadrados</div>
                 <div><b>Arena:</b></div>
                 <div>Campo de Treinamento</div>
             </div>
@@ -211,11 +228,11 @@
             </ul>
         </div>
         <!-- Carta 3: Mini P.E.K.K.A -->
-        <div class="card">
+        <div class="card raro">
             <img src="MiniPEKKACard.webp"
-                alt="Arqueiras">
-            <h2>Mini P.E.K.K.A </h2>
-            <div class="stats">
+                alt="Mini P.E.K.K.A">
+            <h2>Mini P.E.K.K.A</h2>
+            <div class="raro">
                 <div><b>Raridade:</b></div>
                 <div>Rara</div>
                 <div><b>Tropa:</b></div>
@@ -225,7 +242,7 @@
                 <div><b>Alvo:</b></div>
                 <div>Tudo(menos aério)</div>
                 <div><b>Alcance:</b></div>
-                <div>1.2 casas</div>
+                <div>1.2 quadrados</div>
                 <div><b>Arena:</b></div>
                 <div>Campo de Treinamento</div>
             </div>
@@ -272,11 +289,11 @@
             </ul>
         </div>
         <!-- Carta 4: Valquíria -->
-        <div class="card">
+        <div class="card raro">
             <img src="ValkyrieCard.webp"
                 alt="Valquíria">
             <h2> Valquíria</h2>
-            <div class="stats">
+            <div class="raro">
                 <div><b>Raridade:</b></div>
                 <div>Rara</div>
                 <div><b>Tropa:</b></div>
@@ -332,11 +349,11 @@
             </ul>
         </div>
         <!-- Carta 5: barril de Goblins -->
-        <div class="card">
+        <div class="card epico">
             <img src="GoblinBarrelCard.webp"
                 alt="Barril de Goblins">
             <h2>Barril de Goblins</h2>
-            <div class="stats">
+            <div class="epico">
                 <div><b>Raridade:</b></div>
                 <div>Épica</div>
                 <div><b>Tropa:</b></div>
@@ -344,7 +361,7 @@
                 <div><b>Custo:</b></div>
                 <div>3 Elixir</div>
                 <div><b>Alcance:</b></div>
-                <div>6 casas</div>
+                <div>6 quadrados</div>
                 <div><b>Arena:</b></div>
                 <div>Vaso Bárbaro</div>
             </div>
@@ -391,11 +408,11 @@
         </div>
 
         <!-- Carta 6: Cavaleiro -->
-        <div class="card">
+        <div class="card comum">
             <img src="KnightCard.webp"
                 alt="Cavaleiro">
             <h2>Cavaleiro</h2>
-            <div class="stats">
+            <div class="comum">
                 <div><b>Raridade:</b></div>
                 <div>Comum</div>
                 <div><b>Tropa:</b></div>
@@ -403,7 +420,7 @@
                 <div><b>Custo:</b></div>
                 <div>3 Elixir</div>
                 <div><b>Alcance:</b></div>
-                <div>5.5 casas</div>
+                <div>5.5 quadrados</div>
                 <div><b>Arena:</b></div>
                 <div>Campo de Treinamento</div>
             </div>
@@ -452,11 +469,11 @@
         </div>
 
         <!-- Carta 7: P.E.K.K.A -->
-        <div class="card">
+        <div class="card epico">
             <img src="PEKKACard.webp"
                 alt="P.E.K.K.A">
             <h2>P.E.K.K.A</h2>
-            <div class="stats">
+            <div class="epico">
                 <div><b>Raridade:</b></div>
                 <div>Épica</div>
                 <div><b>Tropa:</b></div>
@@ -464,7 +481,7 @@
                 <div><b>Custo:</b></div>
                 <div>7 Elixir</div>
                 <div><b>Alcance:</b></div>
-                <div>1.2 casas</div>
+                <div>1.2 quadrados</div>
                 <div><b>Arena:</b></div>
                 <div>Teatro P.E.K.K.A</div>
             </div>
@@ -514,11 +531,11 @@
         </div>
 
         <!-- Carta 8: Bola de Fogo -->
-        <div class="card">
+        <div class="card feiticos">
             <img src="FireballCard.webp"
                 alt="Bola de Fogo">
             <h2>Bola de Fogo</h2>
-            <div class="stats">
+            <div class="rara, feiticos">
                 <div><b>Raridade:</b></div>
                 <div>Rara</div>
                 <div><b>Tropa:</b></div>
@@ -526,7 +543,7 @@
                 <div><b>Custo:</b></div>
                 <div>4 Elixir</div>
                 <div><b>Alcance:</b></div>
-                <div>2.5 casas</div>
+                <div>2.5 quadrados</div>
                 <div><b>Arena:</b></div>
                 <div>Campo de Treinamento</div>
             </div>
@@ -569,11 +586,11 @@
         </div>
 
         <!-- Carta 9: Mago -->
-        <div class="card">
+        <div class="card raro">
             <img src="WizardCard.webp"
                 alt="Mago">
             <h2>Mago</h2>
-            <div class="stats">
+            <div class="raro">
                 <div><b>Raridade:</b></div>
                 <div>Rara</div>
                 <div><b>Tropa:</b></div>
@@ -581,13 +598,13 @@
                 <div><b>Custo:</b></div>
                 <div>5 Elixir</div>
                 <div><b>Alcance:</b></div>
-                <div>5,5 casas</div>
+                <div>5,5 quadrados</div>
                 <div><b>Arena:</b></div>
                 <div>Vale dos Feitiços</div>
             </div>
 
             <div class="section-title">Descrição</div>
-            <p>É um feitiço de dano em área de raio médio.</p>
+            <p>Tropa terrestre de dano mágico em área e terrestre com alto alcance e dano.</p>
             <div class="section-title">Estatísticas</div>
             <table>
                 <tr>
@@ -611,11 +628,604 @@
             </table>
             <div class="section-title">Counters</div>
             <ul>
-                <li>Tropas com mais 1200 pontos de vida.</li>
+                <li>Pirotécnica</li>
+                <li>Bebê Dragão</li>
+                <li>Valquíria</li>
+                <li>Mini P.E.K.K.A</li>
             </ul>
         </div>
 
+        <!-- Carta 10: Bombardeiro -->
+        <div class="card comum">
+            <img src="BomberCard.webp"
+                alt="Bombardeiro">
+            <h2>Bombardeiro</h2>
+            <div class="comum">
+                <div><b>Raridade:</b></div>
+                <div>Comum</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano terrestre e construção.</div>
+                <div><b>Custo:</b></div>
+                <div>2 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>4,5 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Campo de Treinamento</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>Tropa de baixa elixir que lança bombas, causando dano em área e sendo muito eficaz contra grupos de tropas terrestres.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Cavaleiro</li>
+                <li>Valquíria</li>
+            </ul>
+        </div>
+
+        <!-- Carta 11: Megacavaleiro -->
+        <div class="card lendario">
+            <img src="MegaKnightCard.webp"
+                alt="Mega Cavaleiro">
+            <h2>MegaCavaleiro</h2>
+            <div class="lendario">
+                <div><b>Raridade:</b></div>
+                <div>Lendário</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano terrestre.</div>
+                <div><b>Custo:</b></div>
+                <div>7 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>3,5 ou 5 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Eletrovale</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>Se destaca por sua grande quantidade de dano e de vida.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>P.E.K.K.A</li>
+                <li>Valquíria</li>
+                <li>Torre Inferno</li>
+                <li>Mago Elétrico</li>
+                
+            </ul>
+        </div>
+
+        <!-- Carta 12: Tronco -->
+        <div class="card lendario">
+            <img src="o-tronco-clash-royale-carta-lendaria.png"
+                alt="Tronco">
+            <h2>Tronco</h2>
+            <div class="lendario">
+                <div><b>Raridade:</b></div>
+                <div>Lendário</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>2 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>11,1 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Eletrovale</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>É um feitiço lendário de 2 de elixir que rola pelo campo, causando dano de área e empurrando tropas terrestres para trás.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Mini P.E.K.K.A</li>
+                <li>Pequeno Príncipe</li>
+                <li>Exercito de Esqueletos</li>
+                <li>Gangue de Goblins</li>
+                
+            </ul>
+        </div>
+
+         <!-- Carta 13: Fantasma Real -->
+        <div class="card lendario">
+            <img src="RoyalGhostCard.webp"
+                alt="Fantasma Real">
+            <h2>Fantasma Real</h2>
+            <div class="lendario">
+                <div><b>Raridade:</b></div>
+                <div>Lendário</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>3 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>1 ou 5.5 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Fantasma</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>É uma tropa furtiva e rápida com dano por segundo alto, capaz de atravessar muros.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+
+                <li>Mago Elétrico</li>
+                <li>Valquíria</li>
+                
+            </ul>
+        </div>
+
+        <!-- Carta 14: Veneno -->
+        <div class="card epico feiticos">
+            <img src="PoisonCard.webp"
+                alt="Veneno">
+            <h2>Veneno</h2>
+            <div class="comum feiticos">
+                <div><b>Raridade:</b></div>
+                <div>Épica</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>4 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>3 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Oficina do Construtor</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>É um feitiço épico que causa dano ao longo do tempo em tropas e construções inimigas em uma área específica.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Mini P.E.K.K.A</li>
+                <li>MegaCavaleiro</li>
+                <li>Cavaleiro</li>
+                <li>Mago de Gelo</li>
+                
+            </ul>
+        </div>
+
+                <!-- Carta 15: Espírito de Gelo -->
+        <div class="card espiritos">
+            <img src="IceSpiritCard.webp"
+                alt="Espírito de Gelo">
+            <h2>Espírito de Gelo</h2>
+            <div class="comum feiticos">
+                <div><b>Raridade:</b></div>
+                <div>Comum</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>1 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>2.5 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Pico Congelado</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>É uma tropa de baixo custo de elixir (1 de elixir) com pouca vida, mas muito rápida, que congela inimigos por 2 segundos e pode ser usada para ataque e defesa.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Mago Elétrico</li>
+                <li>Cemitério</li>
+                
+            </ul>
+        </div>
+
+<!-- Carta 16: Espírito Elétrico -->
+        <div class="card espiritos">
+            <img src="ElectroSpiritCard.webp"
+                alt="Espírito Elétrico">
+            <h2>Espírito Elétrico</h2>
+            <div class="comum feiticos">
+                <div><b>Raridade:</b></div>
+                <div>Comum</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>1 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>2.5 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Vale do Mágico</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>É uma carta de custo baixo que ataca tropas ou construções inimigas com um raio elétrico, causando dano em área ao morrer.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Mago de Gelo</li>
+                <li>Canhão</li>
+                <li>Tronco</li>
+                <li>Valquíria</li>
+                <li>Bárbaros</li>
+                <li>Mago</li>
+                <li>Pescador</li>
+                <li>Bola de Neve</li>
+                <li>Espírito de Gelo</li>
+                <li>Flechas</li>
+                
+            </ul>
+        </div>
+
+        <!-- Carta 17: Espírito de Cura -->
+        <div class="card espiritos">
+            <img src="HealSpiritCard.webp"
+                alt="Espírito de Cura">
+            <h2>Espírito de Cura</h2>
+            <div class="epico feiticos">
+                <div><b>Raridade:</b></div>
+                <div>Comum</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>1 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>2.5 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Vale dos Feitiços</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>Ele causa dano a um inimigo e, ao explodir, deixa um pequeno círculo que restaura a vida de tropas aliadas próximas.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Tronco</li>
+                <li>Barril de Bárbaro</li>
+                
+                
+            </ul>
+        </div>
+
+        <!-- Carta 18: Espírito de Fogo -->
+        <div class="card espiritos">
+            <img src="FireSpiritsCard.webp"
+                alt="Espírito de fogo">
+            <h2>Espírito de Fogo</h2>
+            <div class="epico feiticos">
+                <div><b>Raridade:</b></div>
+                <div>Comum</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>1 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>2.5 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Vale dos Feitiços</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>Ele causa dano a um inimigo e, ao explodir, deixa uma pequena que explosão de fogo.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Tronco</li>
+                <li>Bola de Neve</li>
+                <li>Valquíria</li>
+                <li>Mago</li>
+                
+                
+            </ul>
+        </div>
+
+        <!-- Carta 19: Zap -->
+        <div class="card feiticos">
+            <img src="ZapCard.webp"
+                alt="Zap">
+            <h2>Zap</h2>
+            <div class="comum">
+                <div><b>Raridade:</b></div>
+                <div>Comum</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>2 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>5 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Oficina do Construtor</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p>É um feitiço comum de dano em área que atordoa inimigos em um raio pequeno por 0,5 segundo e tem dano reduzido nas torres da coroa.</p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Valquíria</li>
+                <li>Príncipe</li>
+                <li>Mini P.E.K.K.A</li>
+                <li>Torre Inferno</li>
+                
+                
+            </ul>
+        </div>
+
+       <!-- Carta 20: Foguete -->
+        <div class="card feiticos">
+            <img src="ZapCard.webp"
+                alt="Foguete">
+            <h2>Foguete</h2>
+            <div class="comum">
+                <div><b>Raridade:</b></div>
+                <div>Comum</div>
+                <div><b>Tropa:</b></div>
+                <div>Tropa de dano.</div>
+                <div><b>Custo:</b></div>
+                <div>6 Elixir</div>
+                <div><b>Alcance:</b></div>
+                <div>2 quadrados</div>
+                <div><b>Arena:</b></div>
+                <div>Oficina do Construtor</div>
+            </div>
+
+            <div class="section-title">Descrição</div>
+            <p></p>
+            <div class="section-title">Estatísticas</div>
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Dano</th>
+                    <th>DPS</th>
+                    <th>Dano a Torre</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>675</td>
+                    <td>265</td>
+                    <td>967</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>626</td>
+                    <td>831</td>
+                    <td>1.000</td>
+                </tr>
+            </table>
+            <div class="section-title">Counters</div>
+            <ul>
+                <li>Valquíria</li>
+                <li>Príncipe</li>
+                <li>Mini P.E.K.K.A</li>
+                <li>Torre Inferno</li>
+                
+                
+            </ul>
+        </div>
+
+
     </div>
+
+    <script>
+    // Lógica de filtro
+    const buttons = document.querySelectorAll('.filter-buttons button');
+    const cards = document.querySelectorAll('.card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // remove active de todos
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filtro = btn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filtro === 'todas') {
+            card.classList.remove('hidden');
+          } else if (card.classList.contains(filtro)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Wiki Clash Royale — Cartas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f3f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #2d3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.6rem;
+    }
+
+    /* Botões de filtro */
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .filter-buttons button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #6a4ee6;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: bold;
+    }
+
+    .filter-buttons button:hover {
+      background: #5338c2;
+    }
+
+    .filter-buttons button.active {
+      background: #2d3e50;
+    }
+
+    /* Container das cartas */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 100px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .card h2 {
+      text-align: center;
+      color: #6a4ee6;
+      margin: 10px 0;
+    }
+
+    .raridade {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .raridade.comum { color: #999; }
+    .raridade.raro { color: #007bff; }
+    .raridade.epico { color: #a000a0; }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Wiki Clash Royale — Cartas</header>
+
+  <!-- Botões de filtro -->
+  <div class="filter-buttons">
+    <button class="active" data-filter="todas">Todas</button>
+    <button data-filter="comum">Comuns</button>
+    <button data-filter="raro">Raras</button>
+    <button data-filter="epico">Épicas</button>
+  </div>
+
+  <!-- Cartas -->
+  <div class="container" id="cards-container">
+
+    <!-- Cartas Comuns -->
+    <div class="card comum">
+      <img src="https://static.wikia.nocookie.net/clashroyale/images/0/0e/ArchersCard.png" alt="Arqueiras">
+      <h2>Arqueiras</h2>
+      <div class="raridade comum">Comum</div>
+      <p>Duas arqueiras que disparam flechas rápidas a longa distância.</p>
+    </div>
+
+    <div class="card comum">
+      <img src="https://static.wikia.nocookie.net/clashroyale/images/d/d2/KnightCard.png" alt="Cavaleiro">
+      <h2>Cavaleiro</h2>
+      <div class="raridade comum">Comum</div>
+      <p>Um guerreiro corpo a corpo resistente e barato, ótimo para defesa.</p>
+    </div>
+
+    <!-- Cartas Raras -->
+    <div class="card raro">
+      <img src="https://static.wikia.nocookie.net/clashroyale/images/b/b1/GiantCard.png" alt="Gigante">
+      <h2>Gigante</h2>
+      <div class="raridade raro">Raro</div>
+      <p>Tanque que ignora tropas e ataca apenas construções.</p>
+    </div>
+
+    <div class="card raro">
+      <img src="https://static.wikia.nocookie.net/clashroyale/images/a/a5/MiniPEKKACard.png" alt="Mini P.E.K.K.A">
+      <h2>Mini P.E.K.K.A</h2>
+      <div class="raridade raro">Raro</div>
+      <p>Pequeno mas mortal — causa alto dano em um único alvo.</p>
+    </div>
+
+    <!-- Cartas Épicas -->
+    <div class="card epico">
+      <img src="https://static.wikia.nocookie.net/clashroyale/images/0/0b/PrinceCard.png" alt="Príncipe">
+      <h2>Príncipe</h2>
+      <div class="raridade epico">Épico</div>
+      <p>Corre com a lança e causa dano duplo quando acelera.</p>
+    </div>
+
+    <div class="card epico">
+      <img src="https://static.wikia.nocookie.net/clashroyale/images/d/d1/BabyDragonCard.png" alt="Bebê Dragão">
+      <h2>Bebê Dragão</h2>
+      <div class="raridade epico">Épico</div>
+      <p>Cospe fogo em área, ótimo contra hordas de inimigos.</p>
+    </div>
+
+  </div>
+
+  <script>
+    // Lógica de filtro
+    const buttons = document.querySelectorAll('.filter-buttons button');
+    const cards = document.querySelectorAll('.card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // remove active de todos
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filtro = btn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filtro === 'todas') {
+            card.classList.remove('hidden');
+          } else if (card.classList.contains(filtro)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
